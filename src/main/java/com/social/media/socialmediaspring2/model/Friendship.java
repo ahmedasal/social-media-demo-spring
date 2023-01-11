@@ -6,7 +6,7 @@ import lombok.Getter;
 
 import java.util.Date;
 
-@Getter
+
 //TODO many to many.
 @Entity
 @Table(name = "friendship_request")
