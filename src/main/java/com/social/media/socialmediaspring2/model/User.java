@@ -1,6 +1,6 @@
 package com.social.media.socialmediaspring2.model;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;

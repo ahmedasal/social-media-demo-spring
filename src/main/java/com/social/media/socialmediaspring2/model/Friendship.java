@@ -1,7 +1,7 @@
 package com.social.media.socialmediaspring2.model;
 
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Getter;
 
 import java.util.Date;

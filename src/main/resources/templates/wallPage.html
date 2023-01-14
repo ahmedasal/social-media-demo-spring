@@ -269,7 +269,7 @@
                         <img src="img/photo-1455448972184-de647495d428.jpg" alt="" class="card-img-top img-fluid">
                         <div class="card-body text-center ">
                             <img src="img/avatar-dhg.png" alt="img" width="120px" height="120px" class="rounded-circle mt-n5">
-                            <h5 class="card-title">Dave Gamache</h5>
+                            <h5 class="card-title" th:text="${username}">Dave Gamache</h5>
                             <p class="card-text text-justify mb-2">I wish i was a little bit taller, wish i was a baller, wish i had a girl… also.</p>
                             <ul class="list-unstyled nav justify-content-center">
                                <a href="#" class="text-dark text-decoration-none"> <li class="nav-item">Friends <br> <strong>12M</strong></li></a>
@@ -391,16 +391,14 @@
 
 
                         <div class="card-header bg-transparent">
-                            <form class="form-inline">
+                            <form class="form-inline"  method="post" th:action="@{/post}" enctype="multipart/form-data">
 
 
                                 <div class="input-group w-100">
                                  <input type="text" name="message" id="message" placeholder="Message" class="form-control form-control-md">
 
                                  <div class="input-group-append">
-                                        <div class="input-group-text">
-                                                <i class="fas fa-camera"></i>
-                                            </div>
+                                     <input type="submit" value="Post">
 
 
                                  </div>

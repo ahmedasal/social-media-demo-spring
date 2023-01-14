@@ -1,7 +1,7 @@
 package com.social.media.socialmediaspring2.model;
 
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
@@ -25,9 +25,7 @@ public class Post {
     private int likesCount;
     @Column(name = "comments_count")
     private int commentsCount;
-    @ManyToOne
-    @JoinColumn(name = "page_id")
-    private Page page;
+
     //TODO lazy load
 
     // TODO Hibernate annotation
@@ -45,13 +43,7 @@ public class Post {
 
     }
 
-    public Page getPage() {
-        return page;
-    }
 
-    public void setPage(Page page) {
-        this.page = page;
-    }
 
 
     public void addImage(Image image) {
@@ -178,7 +170,6 @@ public class Post {
                 ", postDate=" + postDate +
                 ", likesCount=" + likesCount +
                 ", commentsCount=" + commentsCount +
-                ", page=" + page +
                 '}';
     }
 }

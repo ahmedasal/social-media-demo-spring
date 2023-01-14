@@ -1,8 +1,7 @@
 package com.social.media.socialmediaspring2.model;
 
 
-
-import jakarta.persistence.*;
+import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.*;
 
@@ -18,7 +17,8 @@ public class Page {
     @ManyToMany
     @JoinTable(name = "page_admin", joinColumns = {@JoinColumn(name = "page_id")}, inverseJoinColumns = {@JoinColumn(name = "user_id")})
     Set<User> adminUsers = new HashSet<>();
-    @OneToMany(mappedBy = "page")
+    @OneToMany
+    @JoinColumn(name = "page_id")
     List<Post> posts = new ArrayList<>();
 
     public Page(int id, String pageName) {
@@ -26,22 +26,22 @@ public class Page {
         this.pageName = pageName;
     }
 
-    public void addPost(Post post){
+    public void addPost(Post post) {
         this.posts.add(post);
-        post.setPage(this);
     }
 
     //TODO is this method is correct here I try to delete post from post list
-    public void removePost(Post post){
+    public void removePost(Post post) {
         this.posts.remove(post);
     }
 
 
-    public void addUser(User user){
+    public void addUser(User user) {
         this.adminUsers.add(user);
         user.getPages().add(this);
     }
-    public void removeUser(User user){
+
+    public void removeUser(User user) {
         this.adminUsers.remove(user);
         user.getPages().remove(this);
     }

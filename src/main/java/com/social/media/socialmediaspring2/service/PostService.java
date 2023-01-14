@@ -8,7 +8,8 @@ import com.social.media.socialmediaspring2.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import jakarta.persistence.*;
+
+import javax.persistence.EntityManager;
 import java.util.List;
 
 @Service
