@@ -396,9 +396,8 @@
 
                                 <div class="input-group w-100">
                                  <input type="text" name="message" id="message" placeholder="Message" class="form-control form-control-md">
-
                                  <div class="input-group-append">
-                                     <input type="submit" value="Post">
+
 
 
                                  </div>
@@ -408,7 +407,15 @@
 
 
 
+                                <div>
 
+                                    <br>
+
+                                    <input type="file" name="photos" multiple>
+                                    <br>
+                                    <input type="submit" value="Post">
+
+                                </div>
 
                             </form>
 
@@ -431,23 +438,11 @@
 
 
 
-            <div class="row no-gutters mb-3">
+            <div class="row no-gutters mb-3" th:each="image: ${post.images}" >
                 <div class="col-6 p-1 text-center">
-
-                        <img src="img/adventure-alps-clouds-2259810.jpg" alt="" class="img-fluid mb-2">
-                        <img src="img/aerial-view-architectural-design-buildings-2228123.jpg" alt="" class="img-fluid">
-
-
+                        <img th:src="@{'/image?id=' + ${image.id}} " alt="" class="img-fluid mb-2">
+                    <h1 th:text="${image.getId()}"></h1>
                 </div>
-
-                <div class="col-6 p-1 text-center">
-
-                        <img src="img/celebration-colored-smoke-dark-2297472.jpg" alt="" class="img-fluid mb-2">
-                        <img src="img/bodybuilding-exercise-fitness-2294361.jpg" alt="" class="img-fluid">
-
-
-                </div>
-
 
             </div>
 
